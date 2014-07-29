@@ -152,7 +152,7 @@ public class MainActivity extends Activity {
 					}
 
 				}
-				if (index < items.size()) {
+				if (index > items.size()) {
 					Toast.makeText(getApplicationContext(), "Done",
 							Toast.LENGTH_SHORT).show();
 					String temp = cal.getTime().toString();
@@ -305,7 +305,9 @@ String a = cal1.getTime().toString();
 			
 			String line = br.readLine();
 			inputStreamReader.close();
-			
+			if(line == null) {
+				line ="";
+			}
 			dateUpped = Calendar.getInstance();
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(
 					"EEE MMM dd HH:mm:ss z yyyy");
